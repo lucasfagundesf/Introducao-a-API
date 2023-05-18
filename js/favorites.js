@@ -81,7 +81,7 @@ export class FavoritesView extends Favorites {
             row.querySelector('.user img').alt = `Imagem de ${user.name}`
             row.querySelector('.user p').textContent = user.name
             row.querySelector('.user a').href = `https://github.com/${user.login}`
-            row.querySelector('.user span').textContent = user.login
+            row.querySelector('.user span').textContent = `/${user.login}`
             row.querySelector('.repositories').textContent= user.public_repos
             row.querySelector('.followers').textContent= user.followers
 
@@ -116,7 +116,7 @@ export class FavoritesView extends Favorites {
             6
         </td>
         <td>
-            <button class="remove">&times;</button>
+            <button class="remove">Remover</button>
         </td>
         `
         return tr

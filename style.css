@@ -10,12 +10,19 @@
     --text-color: #303030;
 
     --hue: 194;
-    --primary-color: hsl(var(--hue), 100%, 63%)
+    --background: #000000;
+    --primary-color: #092D38;
+    --th-button-color: #065e7cab;
+    --bg-button-color: #065E7C;
+    --td-color: #E1E1E6;
+    --border-color: #4A808C;
+    --bg-even: #06181C;
+    --color-remove: #F75A68;
 }
 body {
     font-size: 1.6rem;
-    color: var(--text-color);
-    background-color: rgb(250, 254, 255);
+    color: var(--td-color);
+    background-color: var(--background);
 }
 body * {
     font-family: var(--ff-primary);
@@ -34,44 +41,63 @@ body * {
 }
 .app {
     padding: 2rem;
-    max-width: 500px;
+    max-width: 1120px;
     margin: 0 auto;
 }
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 2.5rem 0;
+    margin: 8.7rem 0;
 }
-header h1 {
-    font-size: 2rem;
-    text-transform: uppercase;
-}
+
 .search {
     display: flex;
     align-items: center;
+    gap: .6rem;
 }
 .search input {
-    height: 3.2rem;
-    border: 1px solid #ccc;
+    height: 4.8rem;
+    width: 46.2rem;
+    border: none;
+    color: #FFFFFF;
     border-radius: 0 .4rem .4rem 0;
     padding: 0 .8rem;
+    background-color: var(--bg-even);
 }
+
 .search button {
-    background-color: var(--primary-color);
-    border-radius: 0 .4rem .4rem 0;
-    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: var(--bg-button-color);
+    border-radius: .5rem;
+    height: 4.8rem;
     border: none;
-    padding: 0 1rem;
+    padding: 1.2rem 3.2rem;
     cursor: pointer;
+    color: white;
+    gap: .8rem;
+}
+.search > button > svg {
+   width: 2rem;
 }
 .search button:hover {
-filter: brightness(1.1);
+    color: var(--bg-button-color);
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+button:hover path {
+    fill: var(--bg-button-color);
 }
 table {
     width: 100%;
+
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
     border-collapse: collapse;
-    box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+    border-style: hidden;
+    box-shadow: 0 0 0 1px var(--border-color);
 }
 table * {
     font-size: 1.4rem;
@@ -79,25 +105,41 @@ table * {
 }
 table th {
     background: var(--primary-color);
+    color: var(--td-color);
     text-align: left;
-    font-weight: normal;
+    font-weight: bold;
     padding: 1.5rem;
 }
+p {
+    font-weight: bold;
+}
+p,span {
+    color: var(--td-color);
+}
+span{ 
+    font-weight: normal;
+}
 table th:first-child {
-    border-top-left-radius: .4rem;
+    border-top-left-radius: 1.2rem;
 }
 table th:last-child {
-    border-top-right-radius: .4rem;
-}
-table tr {
-    background: #eee;
+    border-top-right-radius: 1.2rem;
 }
 
-table tr:nth-child(odd) {
-   background-color: #ddd; 
+
+table tr:nth-child(even) {
+    background: var(--bg-even);
+    border: 1px solid var(--border-color);
 }
+table tr:nth-child(odd) {
+   background-color: rgba(6, 22, 27, 0.5);
+   
+}
+
 
 table td {
+    font-weight: bold;
+    color: var(--td-color);
     padding: 1.5rem;
     text-align: left;
 }
@@ -117,13 +159,11 @@ td.user a {
     text-decoration: none;
     
 }
-td.user a p {
-    font-weight: bold;
-}
+
 td .remove {
     background: none;
     border: none;
-
-    color: red;
+    font-weight: normal;
+    color: var(--color-remove);
     cursor: pointer;
 }
